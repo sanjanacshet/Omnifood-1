@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Billing Summary</title>
+  <link rel="stylesheet" href="css/general.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/queries.css" />
+</head>
+<body>
+  <div class="billing-container">
+    <h2>Billing Summary</h2>
+    <div id="order-summary"></div>
+
+    <label for="payment-method"><strong>Select Payment Method:</strong></label>
+    <select id="payment-method" style="margin: 10px 0; display: block;">
+      <option value="Cash on Delivery">Cash on Delivery</option>
+      <option value="Credit/Debit Card">Credit/Debit Card</option>
+      <option value="UPI">UPI</option>
+    </select>
+
+    <button id="confirm-btn" class="btn">Confirm Order</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let orders = JSON.parse(localStorage.getItem("orders")) || [];
+      const name = localStorage.getItem("userName") || "Not provided";
+      const address = localStorage.getItem("userAddress") || "Not provided";
+  
+      const summaryDiv = document.getElementById("order-summary");
+      let total = 0;
+  
+      // ✅ Check if it's user's first order
+      const hasOrderedBefore = localStorage.getItem("hasOrderedBefore") === "true";
+  
+      if (orders.length > 0) {
+        let html = `
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Address:</strong> ${address}</p>
+          <h3>Meals Ordered:</h3>
+          <ul>`;
+  
+        orders.forEach((order, index) => {
+          let price = parseFloat(order.price);
+  
+          // 👇 Make first meal free for first-time users
+          if (!hasOrderedBefore && index === 0) {
+            html += `<li>${order.meal} - <span style="color: green;">FREE (First Meal!)</span></li>`;
+          } else {
+            html += `<li>${order.meal} - ₹${price.toFixed(2)}</li>`;
+
+            total += price;
+          }
+        });
+  
+        html += `</ul><p><strong>Total Amount:</strong> ₹${total.toFixed(2)}</p>`;
+
+  
+        summaryDiv.innerHTML = html;
+      } else {
+        summaryDiv.innerHTML = "<p>No meals added to your order yet.</p>";
+      }
+  
+      document.getElementById("confirm-btn").addEventListener("click", function () {
+  const paymentMethod = document.getElementById("payment-method").value;
+
+  if (orders.length === 0) {
+    alert("No items to order. Please go back and add meals.");
+    return;
+  }
+
+  alert(`Thank you! Your order will be delivered within a few minutes.\nPayment Method: ${paymentMethod} and if ur ordering for the first then your first meal will be free`);
+
+  // ✅ Clear orders after placing the order
+  localStorage.removeItem("orders");
+
+   // ✅ Clear the flag to allow new fresh order
+   localStorage.removeItem("newOrderStarted")
+
+  // ✅ Mark user has placed first order (to remove free meal next time)
+  localStorage.setItem("hasOrderedBefore", "true");
+
+  // ✅ Redirect to home page
+  window.location.href = "index.html";
+});
+
+    });
+  </script>
+  
+  
+</body>
+</html>

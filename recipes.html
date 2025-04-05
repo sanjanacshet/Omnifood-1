@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipes</title>
+     <!--Make sure styles.css exists  -->
+     <link rel="icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+    <script defer src="js/script.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>All Recipes</h1>
+      
+    </header>
+    <div class="meals-container">
+    
+   
+
+      <!-- Spaghetti -->
+      <!-- <div class="meal"> -->
+        <div class="meal" data-name="spaghetti" data-price="280">
+        <img src="img/recipes/spaghetti.jpg" class="meal-img" alt="Japanese Gyozas" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--vegetarian">Vegetarian</span>
+          </div>
+          <p class="meal-title">spaghetti</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+              <span><strong>650</strong> calories</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+              <span>NutriScore &reg; <strong>74</strong></span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+              <span><strong>4.9</strong> rating (537)</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹280</strong></span>
+            </li>
+          </ul>
+          <button class="btn swap-btn" data-meal="spaghetti">Smart Ingredients</button>
+          <button class="btn buy-btn">Buy</button>
+          <ul class="swapped-ingredients" id="spaghetti-swaps"></ul>
+
+        </div>
+      </div>
+ 
+      <!-- Grilled Chicken -->
+      <div class="meal" data-name="chicken" data-price="250">
+
+        <img src="img/recipes/chicken.jpg" class="meal-img" alt="Grilled Chicken" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--protein">Protein</span>
+          </div>
+          <p class="meal-title">Grilled Chicken</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute"><ion-icon class="meal-icon" name="flame-outline"></ion-icon> <span><strong>350</strong> calories</span></li>
+            <li class="meal-attribute"><ion-icon class="meal-icon" name="restaurant-outline"></ion-icon> <span>NutriScore &reg; <strong>90</strong></span></li>
+            <li class="meal-attribute"><ion-icon class="meal-icon" name="star-outline"></ion-icon> <span><strong>4.9</strong> rating (420)</span></li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹250</strong></span>
+            </li>
+          </ul>
+          <button class="btn swap-btn" data-meal="chicken">Smart Ingredients</button>
+          <button class="btn buy-btn">Buy</button>
+          <ul class="swapped-ingredients" id="chicken-swaps"></ul>
+        </div>
+      </div>
+    
+      <!-- Add more meals in the same structure -->
+    
+    
+    
+      <!-- Add similar divs for the remaining 8 recipes -->
+      <div class="meal" data-name="salad" data-price="320">
+        <img src="img/recipes/salad.jpg" class="meal-img" alt="Vegan Salad" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--vegan">Vegan</span>
+          </div>
+          <p class="meal-title">Vegan Salad</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+              <span><strong>350</strong> calories</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+              <span>NutriScore &reg; <strong>95</strong></span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+              <span><strong>4.6</strong> rating (280)</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹320</strong></span>
+            </li>
+          </ul>
+         <!-- Vegan Salad -->
+<button class="btn swap-btn" data-meal="salad">Smart Ingredients</button>
+<button class="btn buy-btn">Buy</button>
+
+<ul class="swapped-ingredients" id="salad-swaps"></ul>
+
+        </div>
+      </div>
+      
+      <div class="meal" data-name="pancakes" data-price="200">
+        <img src="img/recipes/pancakes.jpg" class="meal-img" alt="Pancakes" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--dessert">Dessert</span>
+          </div>
+          <p class="meal-title">Pancakes</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+              <span><strong>450</strong> calories</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+              <span>NutriScore &reg; <strong>80</strong></span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+              <span><strong>4.8</strong> rating (340)</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹200</strong></span>
+            </li>
+          </ul>
+          <button class="btn swap-btn" data-meal="pancakes">Smart Ingredients</button>
+          <button class="btn buy-btn">Buy</button>
+          <ul class="swapped-ingredients" id="pancakes-swaps"></ul>
+          
+        </div>
+      </div>
+      
+      <div class="meal" data-name="smoothie" data-price="150">
+        <img src="img/recipes/smoothie.jpg" class="meal-img" alt="Smoothie" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--healthy">Healthy</span>
+          </div>
+          <p class="meal-title">Smoothie</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+              <span><strong>300</strong> calories</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+              <span>NutriScore &reg; <strong>97</strong></span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+              <span><strong>4.9</strong> rating (400)</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹150</strong></span>
+            </li>
+          </ul>
+          <button class="btn swap-btn" data-meal="smoothie">Smart Ingredients</button>
+          <button class="btn buy-btn">Buy</button>
+          <ul class="swapped-ingredients" id="smoothie-swaps"></ul>
+
+        </div>
+      </div>
+      
+      <div class="meal" data-name="sushi" data-price="400">
+        <img src="img/recipes/sushi.jpg" class="meal-img" alt="Sushi" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--protein">High-Protein</span>
+          </div>
+          <p class="meal-title">Sushi</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+              <span><strong>600</strong> calories</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+              <span>NutriScore &reg; <strong>90</strong></span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+              <span><strong>4.9</strong> rating (520)</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹400</strong></span>
+            </li>
+          </ul>
+          <button class="btn swap-btn" data-meal="sushi">Smart Ingredients</button>
+          <button class="btn buy-btn">Buy</button>
+          <ul class="swapped-ingredients" id="sushi-swaps"></ul>
+          
+        </div>
+      </div>
+      
+      <div class="meal" data-name="burger" data-price="270">
+        <img src="img/recipes/burger.jpg" class="meal-img" alt="Burger" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--fastfood">Fast Food</span>
+          </div>
+          <p class="meal-title">Burger</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+              <span><strong>750</strong> calories</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+              <span>NutriScore &reg; <strong>70</strong></span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+              <span><strong>4.7</strong> rating (450)</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹270</strong></span>
+            </li>
+          </ul>
+          <button class="btn swap-btn" data-meal="burger">Smart Ingredients</button>
+          <button class="btn buy-btn">Buy</button>
+          <ul class="swapped-ingredients" id="burger-swaps"></ul>
+        </div>
+      </div>
+      
+      <div class="meal" data-name="pizza" data-price="350">
+        <img src="img/recipes/pizza.jpg" class="meal-img" alt="Pizza" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--fastfood">Fast Food</span>
+          </div>
+          <p class="meal-title">Pizza</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+              <span><strong>900</strong> calories</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+              <span>NutriScore &reg; <strong>65</strong></span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+              <span><strong>4.8</strong> rating (500)</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹350</strong></span>
+            </li>
+          </ul>
+          <button class="btn swap-btn" data-meal="pizza">Smart Ingredients</button>
+          <button class="btn buy-btn">Buy</button>
+          <ul class="swapped-ingredients" id="pizza-swaps"></ul>
+        </div>
+      </div>
+      <div class="meal" data-name="tacos" data-price="220">
+        <img src="img/recipes/tacos.jpg" class="meal-img" alt="Tacos" />
+        <div class="meal-content">
+          <div class="meal-tags">
+            <span class="tag tag--spicy">Spicy</span>
+          </div>
+          <p class="meal-title">Tacos</p>
+          <ul class="meal-attributes">
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+              <span><strong>550</strong> calories</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+              <span>NutriScore &reg; <strong>78</strong></span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+              <span><strong>4.7</strong> rating (380)</span>
+            </li>
+            <li class="meal-attribute">
+              <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+              <span><strong>₹220</strong></span>
+            </li>
+          </ul>
+          <button class="btn swap-btn" data-meal="tacos">Smart Ingredients</button>
+          <button class="btn buy-btn">Buy</button>
+         <ul class="swapped-ingredients" id="tacos-swaps"></ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>

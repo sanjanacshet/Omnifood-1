@@ -1,0 +1,49 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+      <div>
+        <label for="full-name">Full Name</label>
+        <input id="full-name" type="text" placeholder="Enter your name" required />
+      </div>
+
+      <div>
+        <label for="signup-email">Email address</label>
+        <input id="signup-email" type="email" placeholder="me@example.com" required />
+      </div>
+
+      <div>
+        <label for="signup-password">Password</label>
+        <input id="signup-password" type="password" placeholder="Enter password" required />
+      </div>
+
+      <div>
+        <label for="select-where">Where did you hear about us?</label>
+        <select id="select-where" required>
+          <option value="">Please choose one option:</option>
+          <option value="friends">Friends and family</option>
+          <option value="youtube">YouTube video</option>
+          <option value="podcast">Podcast</option>
+          <option value="ad">Facebook ad</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn--form">Sign up now</button>
+    </form>
+
+    <p class="form-footer">Already have an account? <a href="index.html" id="login-link">Login here</a></p>
+  </div>
+
+  <script defer src="js/script.js"></script>
+</body>
+</html>

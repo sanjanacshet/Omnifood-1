@@ -46,6 +46,7 @@
   <body>
     <header class="header">
       <a href="#">
+
         <img class="logo" alt="Omnifood logo" src="img/omnifood-logo.png" />
       </a>
 
@@ -60,6 +61,17 @@
           <li><a class="main-nav-link" href="#pricing">Plans</a></li>
           <li><a class="main-nav-link nav-cta" href="#cta">Try for free</a></li>
         </ul>
+        <!-- Search Bar Section -->
+    <div class="search-section">
+      <input type="text" id="search-bar" placeholder="Search for ingredients..." onkeyup="showSuggestions()">
+      <ul id="ingredient-suggestions" class="suggestions-list"></ul>
+    </div>
+    <!-- Recipe List (Initially hidden) -->
+    <div id="recipe-list" class="recipe-list">
+      <!-- Recipe items will be dynamically inserted here -->
+    </div>
+  </section>
+
       </nav>
 
       <button class="btn-mobile-nav">
@@ -215,7 +227,7 @@
 
          <div class="container grid grid--3-cols margin-bottom-md">
            
-           <div class="meal">
+          <div class="meal" data-name="Japanese gyozas" data-price="190">
             <img src="img/meals/meal-1.jpg" class="meal-img" alt="Japanese Gyozas" />
             <div class="meal-content">
               <div class="meal-tags">
@@ -235,13 +247,18 @@
                   <ion-icon class="meal-icon" name="star-outline"></ion-icon>
                   <span><strong>4.9</strong> rating (537)</span>
                 </li>
+                <li class="meal-attribute">
+                  <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+                  <span><strong>₹190</strong></span>
+                </li>
               </ul>
               <button class="btn swap-btn" data-meal="gyozas">Smart Ingredients</button>
+              <button class="btn buy-btn">Buy</button>
               <ul class="swapped-ingredients" id="gyozas-swaps"></ul>
             </div>
           </div>
           
-          <div class="meal">
+          <div class="meal" data-name="avocado salad" data-price="360">
             <img src="img/meals/meal-2.jpg" class="meal-img" alt="Avocado Salad" />
             <div class="meal-content">
               <div class="meal-tags">
@@ -262,11 +279,20 @@
                   <ion-icon class="meal-icon" name="star-outline"></ion-icon>
                   <span><strong>4.8</strong> rating (441)</span>
                 </li>
+                <li class="meal-attribute">
+                  <ion-icon class="meal-icon" name="cash-outline"></ion-icon>
+                  <span><strong>₹360</strong></span>
+                </li>
               </ul>
-              <button class="btn swap-btn" data-meal="salad">Smart Ingredients</button>
-              <ul class="swapped-ingredients" id="salad-swaps"></ul>
+            <!-- Avocado Salad -->
+<button class="btn swap-btn" data-meal="avocado-salad">Smart Ingredients</button>
+<button class="btn buy-btn">Buy</button>
+<ul class="swapped-ingredients" id="avocado-salad-swaps"></ul>
+
             </div>
           </div>
+
+          
           <div class="chatbot-container">
             <button class="chatbot-btn">
               <img src="img/chatbot-icon.png" alt="Chatbot" />
@@ -329,8 +355,10 @@
         </div> 
 
         <div class="container all-recipes">
-          <a href="#" class="link">See all recipes &rarr;</a>
+          <a href="recipes.html" class="link" id="see-all-recipes">See all recipes &rarr;</a>
         </div>
+        
+      
       </section>
 
       <section class="section-testimonials" id="testimonials">
@@ -604,7 +632,7 @@
                 first meal is on us!
               </p>
 
-              <form class="cta-form" name="sign-up" netlify>
+              <!-- <form class="cta-form" name="sign-up" netlify>
                 <div>
                   <label for="full-name">Full Name</label>
                   <input
@@ -639,7 +667,27 @@
                   </select>
                 </div>
 
-                <button class="btn btn--form">Sign up now</button>
+                <button class="btn btn--form">Sign up now</button> -->
+               <!-- Inside index.html -->
+<div class="form-container">
+  <h2>Login</h2>
+  <form id="login-form">
+    <div>
+      <label for="login-email">Email address</label>
+      <input id="login-email" type="email" placeholder="me@example.com" required />
+    </div>
+
+    <div>
+      <label for="login-password">Password</label>
+      <input id="login-password" type="password" placeholder="Enter password" required />
+    </div>
+
+    <button type="submit" class="btn btn--form">Login</button>
+  </form>
+
+  <p>Don't have an account? <a href="signup.html" id="signup-link">Sign Up</a></p>
+</div>
+
 
                 <!-- <input type="checkbox" />
                 <input type="number" /> -->
